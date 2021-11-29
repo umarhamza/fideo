@@ -1,14 +1,21 @@
 import React from 'react';
-import { View, Text, StyleSheet, Image, ImageBackground } from 'react-native';
+import { View, Text, StyleSheet, Pressable, ImageBackground } from 'react-native';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Entypo from 'react-native-vector-icons/Entypo';
 import Feather from 'react-native-vector-icons/Feather';
 import bg from '../../../assets/images/ios_bg.jpeg';
 
 const InComingCallScreen = () => {
+  const onAccept = () => {
+    console.warn('accept');
+  };
+  const onDecline = () => {
+    console.warn('deline')
+  };
+
   return (
     <ImageBackground source={bg} style={styles.root} resizeMode='cover'>
-    <Text style={styles.label}>Incoming Fideo from...</Text>
+      <Text style={styles.label}>Incoming Fideo from...</Text>
       <Text style={styles.name}>Umar</Text>
 
       <View style={[styles.row, { marginTop: 'auto' }]}>
@@ -23,20 +30,23 @@ const InComingCallScreen = () => {
       </View>
 
       <View style={styles.row}>
-        <View style={styles.iconContainer}>
+        {/* Decline button */}
+        <Pressable onPress={onDecline} style={styles.iconContainer}>
           <View style={styles.iconButtonContainer}>
             <Feather name='x' size={40} color={'white'} />
           </View>
           <Text style={styles.iconText}>Decline</Text>
-        </View>
-        <View style={styles.iconContainer}>
+        </Pressable>
+
+        {/* Accept button */}
+        <Pressable onPress={onAccept} style={styles.iconContainer}>
           <View
             style={[styles.iconButtonContainer, { backgroundColor: '#147efb' }]}
           >
             <Feather name='check' size={40} color={'white'} />
           </View>
           <Text style={styles.iconText}>Accept</Text>
-        </View>
+        </Pressable>
       </View>
     </ImageBackground>
   );
