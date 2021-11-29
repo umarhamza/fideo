@@ -13,6 +13,7 @@
     "react": "17.0.1",
     "react-dom": "17.0.1",
     "react-native": "https://github.com/expo/react-native/archive/sdk-43.tar.gz",
+    "react-native-vector-icons": "^9.0.0",
     "react-native-web": "0.17.1"
   },
   "devDependencies": {

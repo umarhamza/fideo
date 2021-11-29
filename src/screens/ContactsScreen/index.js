@@ -7,12 +7,14 @@ const ContactsScreen = () => {
   const [filteredContacts, setFilteredContacts] = useState(dummyContacts);
 
   useEffect(() => {
-    if (searchTerm.trim() !== '') {
       const newContacts = dummyContacts.filter(
         (contact) =>
           contact.user_display_name.toLowerCase().includes(searchTerm.toLowerCase())
       );
       setFilteredContacts(newContacts);
+
+    if (searchTerm.trim() === '') {
+      setSearchTerm('')
     }
   }, [searchTerm]);
 
@@ -38,7 +40,6 @@ const ContactsScreen = () => {
 const styles = StyleSheet.create({
   container: {
     padding: 15,
-    flex: 1,
     backgroundColor: '#fff',
   },
   contactName: {
@@ -54,6 +55,7 @@ const styles = StyleSheet.create({
     padding: 10,
     backgroundColor: 'lightgrey',
     borderRadius: 5,
+    marginBottom: 10,
   },
 });
 
