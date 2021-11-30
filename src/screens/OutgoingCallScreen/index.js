@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Text, StyleSheet } from 'react-native';
 import CallActionBox from '../../components/CallActionBox';
 
-const OutgoingCallingScreen = () => {
+const OutgoingCallScreen = () => {
   return (
     <View style={styles.root}>
       <View style={styles.cameraPreview}>
@@ -37,4 +37,4 @@ const styles = StyleSheet.create({
   }
 });
 
-export default OutgoingCallingScreen;
+export default OutgoingCallScreen;

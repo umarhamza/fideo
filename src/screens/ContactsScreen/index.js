@@ -19,7 +19,7 @@ const ContactsScreen = () => {
   }, [searchTerm]);
 
   return (
-    <View style={styles.container}>
+    <View style={styles.root}>
       <TextInput
         style={styles.search}
         onChangeText={setSearchTerm}
@@ -38,9 +38,11 @@ const ContactsScreen = () => {
 };
 
 const styles = StyleSheet.create({
-  container: {
+  root: {
     padding: 15,
     backgroundColor: '#fff',
+    flex: 1,
+    height: '100%',
   },
   contactName: {
     fontSize: 16,
